@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="StockHistory" representedClassName="StockHistory" syncable="YES">
+        <attribute name="close" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="compensation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dollarchange" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dollarvolume" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="intradayhigh" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="m3dollarvolumeavg" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="m3high" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="m3low" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="m3percentchange" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="m3volumeavg" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="open" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="percentchange" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="previousclose" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="promoter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="track1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="track2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="volume" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weekday" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="StockHistory" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

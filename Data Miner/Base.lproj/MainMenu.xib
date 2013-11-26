@@ -113,7 +113,7 @@
                             </menuItem>
                             <menuItem title="Print…" keyEquivalent="p" id="78">
                                 <connections>
-                                    <action selector="printDocument:" target="-1" id="373"/>
+                                    <action selector="printResults:" target="xNv-QP-4qr" id="XCx-jM-6QD"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -728,12 +728,15 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XxO-Ep-ohR">
-                        <rect key="frame" x="599" y="25" width="34" height="25"/>
+                        <rect key="frame" x="587" y="25" width="53" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="roundTextured" title="S" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hnd-DZ-so6">
+                        <buttonCell key="cell" type="roundTextured" title="Log In" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hnd-DZ-so6">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="logIn:" target="xNv-QP-4qr" id="Wmg-rg-zqh"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MG7-YQ-ab2">
                         <rect key="frame" x="649" y="25" width="34" height="25"/>
@@ -750,6 +753,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="parse:" target="xNv-QP-4qr" id="dbT-R9-lyW"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YYG-uf-HdW">
                         <rect key="frame" x="62" y="817" width="22" height="25"/>
@@ -962,6 +968,9 @@
                                                     <segment label="JavaScript" width="74" selected="YES"/>
                                                     <segment label="HTML" width="73" tag="1"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="codeSelectorChanged:" target="xNv-QP-4qr" id="r8Y-cw-YBc"/>
+                                                </connections>
                                             </segmentedCell>
                                         </segmentedControl>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eWm-Mk-h8S">

@@ -59,6 +59,7 @@
 #import "PageLoad.h"
 #import "Functions.h"
 #import "NSTextViewExtras.h"
+#import "DMPullStockData.h"
 
 
 
@@ -76,6 +77,22 @@
 @synthesize webCodeView;
 
 
+
+- (IBAction)parse:(id)sender{
+    if (!self.theWebView.isLoading){
+        NSString *html = [self.theWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
+        [[DMPullStockData alloc] initWithHTML:html];
+    }
+}
+
+- (IBAction)printResults:(id)sender{
+    DMPullStockData *p = [[DMPullStockData alloc] init];
+    [p arrayController];
+}
+
+- (IBAction)logIn:(id)sender {
+	[self.jsWrapper callJSFunction: @"callLogIn" withParameters: nil];
+}
 
 	/* called after our nib has been loaded */
 - (void)awakeFromNib {

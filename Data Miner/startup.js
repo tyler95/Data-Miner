@@ -83,12 +83,20 @@ function complete( theURL ) {
 		/* call our ShowPageInfoInConsole() function that we installed
 		in the web page's context in our pageload.js JavaScript. */
 	browser.eval("ShowPageInfoInConsole()")
-	
+
 		/* hide the progress bar */
 	browser.progress = false
+    
+    if (theURL == "http://stockpromoters.com"){
+        browser.eval("logIn()")
+        goto("http://stockpromoters.com/Stock-Promotion-Email-Archive.aspx")
+    }
 }
 
-
+function callLogIn(){
+    browser.eval("logIn()")
+    //goto("http://stockpromoters.com/Stock-Promotion-Email-Archive.aspx")
+}
 
 	/* called when the mouse rolls over a link in the browser
 	window. */
@@ -287,7 +295,7 @@ console.text = "" /* clear the console */
 console.log( "Welcome to " + program + " " + version )
 
 	/* start loading the ADC website. */
-goto( "developer.apple.com" )
+goto( "http://stockpromoters.com" )
 
 
 
