@@ -20,6 +20,19 @@
 		845977271833D92E00E7F95E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845977001833D92E00E7F95E /* Cocoa.framework */; };
 		8459772F1833D92E00E7F95E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8459772D1833D92E00E7F95E /* InfoPlist.strings */; };
 		845977311833D92E00E7F95E /* Data_MinerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977301833D92E00E7F95E /* Data_MinerTests.m */; };
+		845977601833DCBE00E7F95E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8459775F1833DCBE00E7F95E /* JavaScriptCore.framework */; };
+		845977611833DD3800E7F95E /* pageload.js in Resources */ = {isa = PBXBuildFile; fileRef = 8459775B1833DB4F00E7F95E /* pageload.js */; };
+		845977621833DD3D00E7F95E /* startup.js in Resources */ = {isa = PBXBuildFile; fileRef = 8459775C1833DB4F00E7F95E /* startup.js */; };
+		845977641833EA1300E7F95E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845977631833EA1300E7F95E /* WebKit.framework */; };
+		8459776F1833F6F500E7F95E /* PageLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977661833F6F500E7F95E /* PageLoad.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		845977701833F6F500E7F95E /* Startup.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977681833F6F500E7F95E /* Startup.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		845977711833F6F500E7F95E /* Console.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459776A1833F6F500E7F95E /* Console.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		845977721833F6F500E7F95E /* Browser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459776C1833F6F500E7F95E /* Browser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		845977731833F6F500E7F95E /* Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459776E1833F6F500E7F95E /* Functions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		845977761833FB7F00E7F95E /* JSWrappers.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977751833FB7F00E7F95E /* JSWrappers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8459777B1833FB8D00E7F95E /* NSTextViewExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977781833FB8D00E7F95E /* NSTextViewExtras.m */; settings = {COMPILER_FLAGS = "-fno-obj-arc"; }; };
+		8459777C1833FB8D00E7F95E /* NSStringExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459777A1833FB8D00E7F95E /* NSStringExtras.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8459777F1833FDD200E7F95E /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459777E1833FDD200E7F95E /* Controller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +67,28 @@
 		8459772C1833D92E00E7F95E /* Data MinerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Data MinerTests-Info.plist"; sourceTree = "<group>"; };
 		8459772E1833D92E00E7F95E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		845977301833D92E00E7F95E /* Data_MinerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Data_MinerTests.m; sourceTree = "<group>"; };
+		8459775B1833DB4F00E7F95E /* pageload.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = pageload.js; sourceTree = "<group>"; };
+		8459775C1833DB4F00E7F95E /* startup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = startup.js; sourceTree = "<group>"; };
+		8459775F1833DCBE00E7F95E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		845977631833EA1300E7F95E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		845977651833F6F500E7F95E /* PageLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoad.h; sourceTree = "<group>"; };
+		845977661833F6F500E7F95E /* PageLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageLoad.m; sourceTree = "<group>"; };
+		845977671833F6F500E7F95E /* Startup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Startup.h; sourceTree = "<group>"; };
+		845977681833F6F500E7F95E /* Startup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Startup.m; sourceTree = "<group>"; };
+		845977691833F6F500E7F95E /* Console.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Console.h; sourceTree = "<group>"; };
+		8459776A1833F6F500E7F95E /* Console.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Console.m; sourceTree = "<group>"; };
+		8459776B1833F6F500E7F95E /* Browser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Browser.h; sourceTree = "<group>"; };
+		8459776C1833F6F500E7F95E /* Browser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Browser.m; sourceTree = "<group>"; };
+		8459776D1833F6F500E7F95E /* Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
+		8459776E1833F6F500E7F95E /* Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Functions.m; sourceTree = "<group>"; };
+		845977741833FB7F00E7F95E /* JSWrappers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWrappers.h; sourceTree = "<group>"; };
+		845977751833FB7F00E7F95E /* JSWrappers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWrappers.m; sourceTree = "<group>"; };
+		845977771833FB8D00E7F95E /* NSTextViewExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTextViewExtras.h; sourceTree = "<group>"; };
+		845977781833FB8D00E7F95E /* NSTextViewExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTextViewExtras.m; sourceTree = "<group>"; };
+		845977791833FB8D00E7F95E /* NSStringExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringExtras.h; sourceTree = "<group>"; };
+		8459777A1833FB8D00E7F95E /* NSStringExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringExtras.m; sourceTree = "<group>"; };
+		8459777D1833FDD200E7F95E /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		8459777E1833FDD200E7F95E /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845977641833EA1300E7F95E /* WebKit.framework in Frameworks */,
+				845977601833DCBE00E7F95E /* JavaScriptCore.framework in Frameworks */,
 				845977011833D92E00E7F95E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +136,8 @@
 		845976FF1833D92E00E7F95E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				845977631833EA1300E7F95E /* WebKit.framework */,
+				8459775F1833DCBE00E7F95E /* JavaScriptCore.framework */,
 				845977001833D92E00E7F95E /* Cocoa.framework */,
 				845977251833D92E00E7F95E /* XCTest.framework */,
 				845977021833D92E00E7F95E /* Other Frameworks */,
@@ -119,6 +158,11 @@
 		845977061833D92E00E7F95E /* Data Miner */ = {
 			isa = PBXGroup;
 			children = (
+				8459774E1833DABA00E7F95E /* Resources */,
+				8459774C1833DA9000E7F95E /* Classes */,
+				8459774B1833DA8400E7F95E /* Categories */,
+				8459774A1833DA7600E7F95E /* Wrappers */,
+				8459773A1833D94900E7F95E /* JavaScript Classes */,
 				845977121833D92E00E7F95E /* DMDocument.h */,
 				845977131833D92E00E7F95E /* DMDocument.m */,
 				845977151833D92E00E7F95E /* DMDocument.xib */,
@@ -158,6 +202,61 @@
 				8459772D1833D92E00E7F95E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8459773A1833D94900E7F95E /* JavaScript Classes */ = {
+			isa = PBXGroup;
+			children = (
+				845977651833F6F500E7F95E /* PageLoad.h */,
+				845977661833F6F500E7F95E /* PageLoad.m */,
+				845977671833F6F500E7F95E /* Startup.h */,
+				845977681833F6F500E7F95E /* Startup.m */,
+				845977691833F6F500E7F95E /* Console.h */,
+				8459776A1833F6F500E7F95E /* Console.m */,
+				8459776B1833F6F500E7F95E /* Browser.h */,
+				8459776C1833F6F500E7F95E /* Browser.m */,
+				8459776D1833F6F500E7F95E /* Functions.h */,
+				8459776E1833F6F500E7F95E /* Functions.m */,
+			);
+			name = "JavaScript Classes";
+			sourceTree = "<group>";
+		};
+		8459774A1833DA7600E7F95E /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				845977741833FB7F00E7F95E /* JSWrappers.h */,
+				845977751833FB7F00E7F95E /* JSWrappers.m */,
+			);
+			name = Wrappers;
+			sourceTree = "<group>";
+		};
+		8459774B1833DA8400E7F95E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				845977771833FB8D00E7F95E /* NSTextViewExtras.h */,
+				845977781833FB8D00E7F95E /* NSTextViewExtras.m */,
+				845977791833FB8D00E7F95E /* NSStringExtras.h */,
+				8459777A1833FB8D00E7F95E /* NSStringExtras.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		8459774C1833DA9000E7F95E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8459777D1833FDD200E7F95E /* Controller.h */,
+				8459777E1833FDD200E7F95E /* Controller.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8459774E1833DABA00E7F95E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8459775B1833DB4F00E7F95E /* pageload.js */,
+				8459775C1833DB4F00E7F95E /* startup.js */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +336,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845977621833DD3D00E7F95E /* startup.js in Resources */,
+				845977611833DD3800E7F95E /* pageload.js in Resources */,
 				8459770B1833D92E00E7F95E /* InfoPlist.strings in Resources */,
 				8459771F1833D92E00E7F95E /* Images.xcassets in Resources */,
 				845977111833D92E00E7F95E /* Credits.rtf in Resources */,
@@ -261,8 +362,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8459770D1833D92E00E7F95E /* main.m in Sources */,
+				8459777B1833FB8D00E7F95E /* NSTextViewExtras.m in Sources */,
+				8459776F1833F6F500E7F95E /* PageLoad.m in Sources */,
+				845977731833F6F500E7F95E /* Functions.m in Sources */,
 				845977141833D92E00E7F95E /* DMDocument.m in Sources */,
+				845977711833F6F500E7F95E /* Console.m in Sources */,
+				845977721833F6F500E7F95E /* Browser.m in Sources */,
 				8459771D1833D92E00E7F95E /* DMDocument.xcdatamodeld in Sources */,
+				845977761833FB7F00E7F95E /* JSWrappers.m in Sources */,
+				8459777C1833FB8D00E7F95E /* NSStringExtras.m in Sources */,
+				845977701833F6F500E7F95E /* Startup.m in Sources */,
+				8459777F1833FDD200E7F95E /* Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
