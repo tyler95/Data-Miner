@@ -75,14 +75,116 @@
 @synthesize JavaScript;
 @synthesize codeSelector;
 @synthesize webCodeView;
+@synthesize pullData;
 
 
 
 - (IBAction)parse:(id)sender{
     if (!self.theWebView.isLoading){
-        NSString *html = [self.theWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
-        [[DMPullStockData alloc] initWithHTML:html];
+      /*  NSString *html = [self.theWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
+        [[DMPullStockData alloc] initWithHTML:html ID:@"5088" Weekday:@"fri"];
+        self.parsingData = YES;*/
+        self.lastID = @"4826";
+        
+        
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:60.0
+                                                      target:self
+                                                    selector:@selector(createID)
+                                                    userInfo:nil
+                                                     repeats:YES];
+        
     }
+}
+
+- (void)parseDataWithID:(NSString *)ID Weekday:(NSString *)day{
+    if ([ID isEqualToString:self.lastID]) return;
+    
+    self.lastID = ID;
+    NSString *function = [self makeNextFunctionWithID:ID];
+    [self.jsWrapper callJSFunction:@"evalScript" withParameters:function, nil];
+    
+    sleep(30);
+    
+    NSString *html = [self.theWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
+    
+    if (!self.theWebView.isLoading)
+    [[DMPullStockData alloc] initWithHTML:html ID:ID Weekday:day];
+    
+}
+     
+- (NSString *)makeNextFunctionWithID:(NSString *)ID{
+    NSString *first = @"javascript:__doPostBack('ctl00$Main$cal','";
+    NSString *last = @"')";
+    
+    NSString *function = [first stringByAppendingString:ID];
+    function = [function stringByAppendingString:last];
+    
+    
+    return function;
+}
+
+- (void)createID{
+    int inc = 1;
+    NSString *weekday = nil;
+    NSString *tmpID = self.lastID;
+    while (1) {
+        NSString *testID = [NSString stringWithFormat:@"%d", (tmpID.intValue - inc) ];
+        NSString *dec = [self findDecrement:testID];
+        NSLog (@"Decrement: %@", dec);
+        if ([testID isEqualToString:@"3000"]){
+            [self.timer invalidate];
+            return;
+            }
+        
+        if ((dec.intValue != 5) && (dec.intValue != 6)){
+            if (dec.intValue == 1)
+                weekday = @"thurs";
+            else if (dec.intValue == 2)
+                weekday = @"wed";
+            else if (dec.intValue == 3)
+                weekday = @"tue";
+            else if (dec.intValue == 4)
+                weekday = @"mon";
+            else if (dec.intValue == 7)
+                weekday = @"fri";
+            else {
+                weekday = @"error";
+            }
+
+            
+            [self parseDataWithID:testID Weekday:weekday];
+            NSLog(@"ID: %@", testID);
+            return;
+        }
+        
+        inc++;
+    }
+}
+
+- (NSString *)findDecrement:(NSString *)number{
+    int increment = 1;
+    int multiplier = 0;
+    int testValue = 0;
+    int startValue = 5088;
+    NSString *decrement;
+    while (1){
+        testValue = (startValue - (multiplier * 7)) - increment;
+        
+        if (testValue == number.intValue){
+            decrement = [NSString stringWithFormat:@"%d", increment];
+            break;
+        }
+        
+        if (increment < 7){
+            increment++;
+        }
+        else {
+            increment = 1;
+            multiplier++;
+        }
+        
+    }
+    return decrement;
 }
 
 - (IBAction)printResults:(id)sender{
@@ -94,9 +196,58 @@
 	[self.jsWrapper callJSFunction: @"callLogIn" withParameters: nil];
 }
 
+- (IBAction)pullStockData:(id)sender{
+    self.pullData = YES;
+    [self.jsWrapper callJSFunction:@"goto" withParameters:@"http://stockpromoters.com", nil];
+}
+
+- (void)webLoadComplete:(NSNotification *)aNotification {
+    self.HTML = [self.theWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
+    /*
+    if (self.parsingData == YES){
+        [self createID];
+    }
+    */
+    if (self.pullData == YES){
+    NSString *currentURL = [self.theWebView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
+    //NSString  *currentURL = self.theWebView.re
+    NSLog(@"currentUrl: %@", currentURL);
+        if ([currentURL isEqualToString:@"http://stockpromoters.com/"]){
+            [self.jsWrapper callJSFunction:@"callLogIn" withParameters:nil];
+        }
+        if ([currentURL isEqualToString:@"http://stockpromoters.com/First-Time-Stock-Promotions.aspx"]){
+            if (self.requestCount == 0){
+            [self.jsWrapper callJSFunction:@"gotoEmailArchive" withParameters:nil];
+                self.requestCount++;
+            }
+        }
+    }
+	
+
+    /* we're done, so stop loading */
+	[self.theWebView stopLoading:self];
+	
+    /* reset the flag */
+	NSString *urlThatWasLoading = self.urlOfLoadingPage;
+	
+    /* reset the loading state vars */
+	self.urlOfLoadingPage = nil;
+	self.isLoadingPage = NO;
+	
+    /* adjust the back and forward buttons */
+	[self.goForward setEnabled: ([[self.theWebView backForwardList] forwardItem ] ? YES : NO)];
+	[self.goBack setEnabled: ([[self.theWebView backForwardList] backItem ] ? YES : NO)];
+    
+    /* tell JavaScript that the load is complete */
+	[self.jsWrapper callJSFunction: @"complete" withParameters: urlThatWasLoading, nil];
+}
+
 	/* called after our nib has been loaded */
 - (void)awakeFromNib {
 	
+    self.parsingData = NO;
+    self.requestCount = 0;
+    self.pullData = NO;
 		/* special font for our text fields */
     [self.startupScriptText setFont:[NSFont fontWithName:@"Courier" size:12]];
     [self.scriptText setFont:[NSFont fontWithName:@"Courier" size:12]];
@@ -362,6 +513,8 @@
 - (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error
 			forFrame:(WebFrame *)frame {
 
+    NSLog(@"Error %li", (long)error.code);
+    if (error.code == NSURLErrorCancelled) return;
 		/* call the error function in the startup JavaScript. */
 	[self.jsWrapper callJSFunction: @"error" withParameters:
 				[NSString stringWithFormat: @"provisional error: %@", error], nil];
@@ -550,26 +703,7 @@
 		
 	- it prints some basic information about the web page to the console log.
 	*/
-- (void)webLoadComplete:(NSNotification *)aNotification {
-    self.HTML = [self.theWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
-			
-		/* we're done, so stop loading */
-	[self.theWebView stopLoading:self];
-	
-		/* reset the flag */
-	NSString *urlThatWasLoading = self.urlOfLoadingPage;
-	
-		/* reset the loading state vars */
-	self.urlOfLoadingPage = nil;
-	self.isLoadingPage = NO;
-	
-		/* adjust the back and forward buttons */
-	[self.goForward setEnabled: ([[self.theWebView backForwardList] forwardItem ] ? YES : NO)];
-	[self.goBack setEnabled: ([[self.theWebView backForwardList] backItem ] ? YES : NO)];
 
-		/* tell JavaScript that the load is complete */
-	[self.jsWrapper callJSFunction: @"complete" withParameters: urlThatWasLoading, nil];
-}
 
 
 

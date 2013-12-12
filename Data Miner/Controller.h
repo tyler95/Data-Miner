@@ -143,6 +143,12 @@
 
 @property (strong, nonatomic) NSString *JavaScript;
 @property (strong, nonatomic) NSString *HTML;
+@property (nonatomic) BOOL pullData;
+@property (nonatomic) int requestCount;
+@property (nonatomic) BOOL parsingData;
+@property (strong, nonatomic) NSString *lastID;
+@property (strong, nonatomic) NSString *lastFunction;
+@property (strong, nonatomic) NSTimer *timer;
 
 	/* nib initialization */
 - (void)awakeFromNib;

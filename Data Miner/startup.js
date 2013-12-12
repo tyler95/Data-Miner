@@ -87,15 +87,22 @@ function complete( theURL ) {
 		/* hide the progress bar */
 	browser.progress = false
     
-    if (theURL == "http://stockpromoters.com"){
+  /*  if (theURL == "http://stockpromoters.com"){
         browser.eval("logIn()")
         goto("http://stockpromoters.com/Stock-Promotion-Email-Archive.aspx")
-    }
+    }*/
 }
 
 function callLogIn(){
     browser.eval("logIn()")
-    //goto("http://stockpromoters.com/Stock-Promotion-Email-Archive.aspx")
+}
+
+function evalScript( theScript ){
+    browser.eval( theScript )
+}
+
+function gotoEmailArchive(){
+    goto( "http://stockpromoters.com/Stock-Promotion-Email-Archive.aspx" )
 }
 
 	/* called when the mouse rolls over a link in the browser

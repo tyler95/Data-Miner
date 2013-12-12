@@ -16,6 +16,8 @@
 @property (strong, nonatomic) NSString *Main;
 @property (strong, nonatomic) NSDate *date;
 @property (strong, nonatomic) NSString *trim;
+@property (strong, nonatomic) NSString *ID;
+@property (strong, nonatomic) NSString *Weekday;
 
 
 //@property (strong, nonatomic) NSArrayController *arrayController;
@@ -24,7 +26,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-- (id)initWithHTML:(NSString *)Main;
+- (id)initWithHTML:(NSString *)Main ID:(NSString *)ID Weekday:(NSString *)weekday;
 - (void)extractAndUploadData:(NSString *)inString;
 
 

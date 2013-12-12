@@ -15,13 +15,16 @@
 
 @synthesize date = _date;
 @synthesize Main = _Main;
+@synthesize ID = _ID;
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 
-- (id)initWithHTML:(NSString *)Main{
+- (id)initWithHTML:(NSString *)Main ID:(NSString *)ID Weekday:(NSString *)weekday{
+    self.Weekday = weekday;
+    self.ID = ID;
     self.Main = Main;
     [self beginParse];
     return self;
@@ -54,7 +57,9 @@
     
     NSString *beforeDate = tmp[1];
     NSArray *removeDate = [beforeDate componentsSeparatedByString:@"</span></b>"];
-    self.date = removeDate[0];
+    NSString *dateString = removeDate[0];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    self.date = [df dateFromString:dateString];
     
     
     
@@ -100,20 +105,20 @@
     NSString *Close = [self getTextBetween:@"lblClose\">" And:@"</span></td><tdstyle=\"width:" From:self.trim];
     NSString *Volume = [self getTextBetween:@"lblChange\">" And:@"</span></td></tr><tr><td>&nbsp;</" From:self.trim];
     NSString *IntradayHigh = [self getTextBetween:@"_Label7\">" And:@"</span></td><tdstyle=\"color:#3A7EBD;font-" From:self.trim];
-    NSString *PercentChange = [self getTextBetween:@"_Label8\">" And:@"td><tdstyle=\"color:#3A7E" From:self.trim];
-    NSString *DollarChange = [self getTextBetween:@"lblVol\">" And:@"weight:bold;\">" From:self.trim];
-    NSString *DollarVolume = [self getTextBetween:@"_lblPer\">" And:@"BD;font-$Open:</td>" From:self.trim];
-    NSString *Open = [self getTextBetween:@"_Label6\">" And:@"</span></td><td>&nbsp;</" From:self.trim];
-    NSString *PreviousClose = [self getTextBetween:@"_Label9\">" And:@"td><td>&nbsp;</td></" From:self.trim];
-    NSString *M3High = [self getTextBetween:@"_Label1\">" And:@"Volume3mavg" From:self.trim];
-    NSString *M3VolumeAvg = [self getTextBetween:@"_Label4\">" And:@"BD;font-$Low" From:self.trim];
-    NSString *M3Low = [self getTextBetween:@"_Label2\">" And:@"%ChangeFrom3m" From:self.trim];
-    NSString *M3PercentChange = [self getTextBetween:@"_Label5\">" And:@"BD;font" From:self.trim];
-    NSString *M3DollarVolumeAvg = [self getTextBetween:@"_Label3\">" And:@"&nbsp;</tr><tr><tdcolspan=\"5\"s" From:self.trim];
-    NSString *Promoter = [self getTextBetween:@"_lblPromoterName\">" And:@"</span></td></" From:self.trim];
-    NSString *Compensation = [self getTextBetween:@"lblCompensation\">" And:@"</" From:self.trim];
+    NSString *PercentChange = [self getTextBetween:@"_Label8\">" And:@"</span></td>" From:self.trim];
+    NSString *DollarChange = [self getTextBetween:@"lblVol\">" And:@"</span></td>" From:self.trim];
+    NSString *DollarVolume = [self getTextBetween:@"_lblPer\">" And:@"</span></td>" From:self.trim];
+    NSString *Open = [self getTextBetween:@"_Label6\">" And:@"</span></td>" From:self.trim];
+    NSString *PreviousClose = [self getTextBetween:@"_Label9\">" And:@"</span></td>" From:self.trim];
+    NSString *M3High = [self getTextBetween:@"_Label1\">" And:@"</span></td>" From:self.trim];
+    NSString *M3VolumeAvg = [self getTextBetween:@"_Label4\">" And:@"</span></td>" From:self.trim];
+    NSString *M3Low = [self getTextBetween:@"_Label2\">" And:@"</span></td>" From:self.trim];
+    NSString *M3PercentChange = [self getTextBetween:@"_Label5\">" And:@"</span></td>" From:self.trim];
+    NSString *M3DollarVolumeAvg = [self getTextBetween:@"_Label3\">" And:@"</span></td>" From:self.trim];
+    NSString *Promoter = [self getTextBetween:@"_lblPromoterName\">" And:@"</span></td>" From:self.trim];
+    NSString *Compensation = [self getTextBetween:@"lblCompensation\">" And:@"</span></td>" From:self.trim];
     
-    NSLog(@"Company: %@\nSymbol: %@\nClose: %@\nVolume: %@\nIntraday High: %@\nPercent Change: %@\nDollar Change: %@\nDollarVolume: %@\nOpen: %@\nPrevious Close: %@\n3 Month High: %@\n3 Month Average Volume: %@\n3 Month Low: %@\n3 Month Percent Change: %@\n3 Month Dollar Volume Average: %@\nPromoter: %@\nCompensation: %@\n", Company, Symbol, Close, Volume, IntradayHigh, PercentChange, DollarChange, DollarVolume, Open, PreviousClose, M3High, M3VolumeAvg, M3Low, M3PercentChange, M3DollarVolumeAvg, Promoter, Compensation);
+   /* NSLog(@"Company: %@\nSymbol: %@\nClose: %@\nVolume: %@\nIntraday High: %@\nPercent Change: %@\nDollar Change: %@\nDollarVolume: %@\nOpen: %@\nPrevious Close: %@\n3 Month High: %@\n3 Month Average Volume: %@\n3 Month Low: %@\n3 Month Percent Change: %@\n3 Month Dollar Volume Average: %@\nPromoter: %@\nCompensation: %@\n", Company, Symbol, Close, Volume, IntradayHigh, PercentChange, DollarChange, DollarVolume, Open, PreviousClose, M3High, M3VolumeAvg, M3Low, M3PercentChange, M3DollarVolumeAvg, Promoter, Compensation);*/
     
     NSManagedObjectContext *context = [self managedObjectContext];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"StockHistory" inManagedObjectContext:self.managedObjectContext];
@@ -121,6 +126,36 @@
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
     [f setNumberStyle:NSNumberFormatterNoStyle];
     
+    if ([PercentChange isEqualToString:@"N/A"]){
+        if (![PreviousClose isEqualToString:@"N/A"] && ![Close isEqualToString:@"N/A"]) {
+            PercentChange = [NSString stringWithFormat:@"%f",(Close.floatValue - PreviousClose.floatValue) / PreviousClose.floatValue];
+        }
+        else {
+            PreviousClose = @"9999";
+        }
+    }
+    
+    if ([DollarChange isEqualToString:@"N/A"])
+        DollarChange = @"9999";
+    if ([Open isEqualToString:@"N/A"])
+        Open = @"9999";
+    if ([Close isEqualToString:@"N/A"])
+        Close = @"9999";
+    if ([IntradayHigh isEqualToString:@"N/A"])
+        IntradayHigh = @"9999";
+    if ([PreviousClose isEqualToString:@"N/A"])
+        PreviousClose = @"9999";
+    if ([M3Low isEqualToString:@"N/A"])
+        M3Low = @"9999";
+    if ([M3High isEqualToString:@"N/A"])
+        M3High = @"9999";
+    if ([M3PercentChange isEqualToString:@"N/A"])
+        M3PercentChange = @"9999";
+    
+    Volume = [Volume stringByReplacingOccurrencesOfString:@"," withString:@""];
+    M3VolumeAvg = [M3VolumeAvg stringByReplacingOccurrencesOfString:@"," withString:@""];
+    M3DollarVolumeAvg = [M3DollarVolumeAvg stringByReplacingOccurrencesOfString:@"," withString:@""];
+    DollarVolume = [DollarVolume stringByReplacingOccurrencesOfString:@"," withString:@""];
     
     StockHistory *newDoc = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     newDoc.company = Company;
@@ -140,6 +175,10 @@
     newDoc.m3dollarvolumeavg = [f numberFromString:M3DollarVolumeAvg];
     newDoc.promoter = Promoter;
     newDoc.compensation = Compensation;
+    newDoc.date = self.date;
+    newDoc.id = [f numberFromString:self.ID];
+    newDoc.weekday = self.Weekday;
+    
     
     NSError *error = nil;
     

@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F378A0018450453004BFFF8 /* DMPullStockData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F3789FF18450453004BFFF8 /* DMPullStockData.m */; };
-		2F378A031845051E004BFFF8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F378A011845051E004BFFF8 /* Model.xcdatamodeld */; };
-		2F378A0618450715004BFFF8 /* StockHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F378A0518450715004BFFF8 /* StockHistory.m */; };
 		2F378A1918450B82004BFFF8 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F378A0918450B82004BFFF8 /* AFHTTPClient.m */; };
 		2F378A1A18450B82004BFFF8 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F378A0B18450B82004BFFF8 /* AFHTTPRequestOperation.m */; };
 		2F378A1B18450B82004BFFF8 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F378A0D18450B82004BFFF8 /* AFImageRequestOperation.m */; };
@@ -18,6 +15,12 @@
 		2F378A1E18450B82004BFFF8 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F378A1418450B82004BFFF8 /* AFPropertyListRequestOperation.m */; };
 		2F378A1F18450B82004BFFF8 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F378A1618450B82004BFFF8 /* AFURLConnectionOperation.m */; };
 		2F378A2018450B82004BFFF8 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F378A1818450B82004BFFF8 /* AFXMLRequestOperation.m */; };
+		2F4781D418594082002DAF85 /* pageload.js in Sources */ = {isa = PBXBuildFile; fileRef = 2F4781D218594082002DAF85 /* pageload.js */; };
+		2F4781D518594082002DAF85 /* startup.js in Sources */ = {isa = PBXBuildFile; fileRef = 2F4781D318594082002DAF85 /* startup.js */; };
+		2F4781D718594158002DAF85 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 2F4781D618594158002DAF85 /* Model.xcdatamodel */; };
+		2F4781DA185941B8002DAF85 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4781D9185941B8002DAF85 /* Controller.m */; };
+		2F4781DD18594238002DAF85 /* DMPullStockData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4781DC18594238002DAF85 /* DMPullStockData.m */; };
+		2F4781E018596964002DAF85 /* StockHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4781DF18596964002DAF85 /* StockHistory.m */; };
 		845977011833D92E00E7F95E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845977001833D92E00E7F95E /* Cocoa.framework */; };
 		8459770B1833D92E00E7F95E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 845977091833D92E00E7F95E /* InfoPlist.strings */; };
 		8459770D1833D92E00E7F95E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459770C1833D92E00E7F95E /* main.m */; };
@@ -32,8 +35,6 @@
 		8459772F1833D92E00E7F95E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8459772D1833D92E00E7F95E /* InfoPlist.strings */; };
 		845977311833D92E00E7F95E /* Data_MinerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977301833D92E00E7F95E /* Data_MinerTests.m */; };
 		845977601833DCBE00E7F95E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8459775F1833DCBE00E7F95E /* JavaScriptCore.framework */; };
-		845977611833DD3800E7F95E /* pageload.js in Resources */ = {isa = PBXBuildFile; fileRef = 8459775B1833DB4F00E7F95E /* pageload.js */; };
-		845977621833DD3D00E7F95E /* startup.js in Resources */ = {isa = PBXBuildFile; fileRef = 8459775C1833DB4F00E7F95E /* startup.js */; };
 		845977641833EA1300E7F95E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845977631833EA1300E7F95E /* WebKit.framework */; };
 		8459776F1833F6F500E7F95E /* PageLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977661833F6F500E7F95E /* PageLoad.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		845977701833F6F500E7F95E /* Startup.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977681833F6F500E7F95E /* Startup.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -43,7 +44,6 @@
 		845977761833FB7F00E7F95E /* JSWrappers.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977751833FB7F00E7F95E /* JSWrappers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8459777B1833FB8D00E7F95E /* NSTextViewExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 845977781833FB8D00E7F95E /* NSTextViewExtras.m */; settings = {COMPILER_FLAGS = "-fno-obj-arc"; }; };
 		8459777C1833FB8D00E7F95E /* NSStringExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459777A1833FB8D00E7F95E /* NSStringExtras.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8459777F1833FDD200E7F95E /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459777E1833FDD200E7F95E /* Controller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,11 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F3789FE18450453004BFFF8 /* DMPullStockData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPullStockData.h; sourceTree = "<group>"; };
-		2F3789FF18450453004BFFF8 /* DMPullStockData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPullStockData.m; sourceTree = "<group>"; };
-		2F378A021845051E004BFFF8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		2F378A0418450715004BFFF8 /* StockHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockHistory.h; sourceTree = "<group>"; };
-		2F378A0518450715004BFFF8 /* StockHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockHistory.m; sourceTree = "<group>"; };
 		2F378A0818450B82004BFFF8 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		2F378A0918450B82004BFFF8 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		2F378A0A18450B82004BFFF8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -79,6 +74,15 @@
 		2F378A1618450B82004BFFF8 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		2F378A1718450B82004BFFF8 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
 		2F378A1818450B82004BFFF8 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		2F4781D218594082002DAF85 /* pageload.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = pageload.js; sourceTree = "<group>"; };
+		2F4781D318594082002DAF85 /* startup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = startup.js; sourceTree = "<group>"; };
+		2F4781D618594158002DAF85 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2F4781D8185941B1002DAF85 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		2F4781D9185941B8002DAF85 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		2F4781DB18594238002DAF85 /* DMPullStockData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPullStockData.h; sourceTree = "<group>"; };
+		2F4781DC18594238002DAF85 /* DMPullStockData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPullStockData.m; sourceTree = "<group>"; };
+		2F4781DE18596964002DAF85 /* StockHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockHistory.h; sourceTree = "<group>"; };
+		2F4781DF18596964002DAF85 /* StockHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockHistory.m; sourceTree = "<group>"; };
 		845976FD1833D92E00E7F95E /* Data Miner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Data Miner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		845977001833D92E00E7F95E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		845977031833D92E00E7F95E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -100,8 +104,6 @@
 		8459772C1833D92E00E7F95E /* Data MinerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Data MinerTests-Info.plist"; sourceTree = "<group>"; };
 		8459772E1833D92E00E7F95E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		845977301833D92E00E7F95E /* Data_MinerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Data_MinerTests.m; sourceTree = "<group>"; };
-		8459775B1833DB4F00E7F95E /* pageload.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = pageload.js; sourceTree = "<group>"; };
-		8459775C1833DB4F00E7F95E /* startup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = startup.js; sourceTree = "<group>"; };
 		8459775F1833DCBE00E7F95E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		845977631833EA1300E7F95E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		845977651833F6F500E7F95E /* PageLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoad.h; sourceTree = "<group>"; };
@@ -120,8 +122,6 @@
 		845977781833FB8D00E7F95E /* NSTextViewExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTextViewExtras.m; sourceTree = "<group>"; };
 		845977791833FB8D00E7F95E /* NSStringExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringExtras.h; sourceTree = "<group>"; };
 		8459777A1833FB8D00E7F95E /* NSStringExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringExtras.m; sourceTree = "<group>"; };
-		8459777D1833FDD200E7F95E /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
-		8459777E1833FDD200E7F95E /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,13 +302,13 @@
 		8459774C1833DA9000E7F95E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8459777D1833FDD200E7F95E /* Controller.h */,
-				8459777E1833FDD200E7F95E /* Controller.m */,
-				2F3789FE18450453004BFFF8 /* DMPullStockData.h */,
-				2F3789FF18450453004BFFF8 /* DMPullStockData.m */,
-				2F378A011845051E004BFFF8 /* Model.xcdatamodeld */,
-				2F378A0418450715004BFFF8 /* StockHistory.h */,
-				2F378A0518450715004BFFF8 /* StockHistory.m */,
+				2F4781DE18596964002DAF85 /* StockHistory.h */,
+				2F4781DF18596964002DAF85 /* StockHistory.m */,
+				2F4781DB18594238002DAF85 /* DMPullStockData.h */,
+				2F4781DC18594238002DAF85 /* DMPullStockData.m */,
+				2F4781D8185941B1002DAF85 /* Controller.h */,
+				2F4781D9185941B8002DAF85 /* Controller.m */,
+				2F4781D618594158002DAF85 /* Model.xcdatamodel */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -316,8 +316,8 @@
 		8459774E1833DABA00E7F95E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8459775B1833DB4F00E7F95E /* pageload.js */,
-				8459775C1833DB4F00E7F95E /* startup.js */,
+				2F4781D218594082002DAF85 /* pageload.js */,
+				2F4781D318594082002DAF85 /* startup.js */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -399,8 +399,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845977621833DD3D00E7F95E /* startup.js in Resources */,
-				845977611833DD3800E7F95E /* pageload.js in Resources */,
 				8459770B1833D92E00E7F95E /* InfoPlist.strings in Resources */,
 				8459771F1833D92E00E7F95E /* Images.xcassets in Resources */,
 				845977111833D92E00E7F95E /* Credits.rtf in Resources */,
@@ -425,15 +423,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F378A1F18450B82004BFFF8 /* AFURLConnectionOperation.m in Sources */,
+				2F4781E018596964002DAF85 /* StockHistory.m in Sources */,
 				8459770D1833D92E00E7F95E /* main.m in Sources */,
-				2F378A0618450715004BFFF8 /* StockHistory.m in Sources */,
+				2F4781D418594082002DAF85 /* pageload.js in Sources */,
 				8459777B1833FB8D00E7F95E /* NSTextViewExtras.m in Sources */,
 				2F378A1C18450B82004BFFF8 /* AFJSONRequestOperation.m in Sources */,
 				2F378A2018450B82004BFFF8 /* AFXMLRequestOperation.m in Sources */,
 				2F378A1D18450B82004BFFF8 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				2F378A0018450453004BFFF8 /* DMPullStockData.m in Sources */,
-				2F378A031845051E004BFFF8 /* Model.xcdatamodeld in Sources */,
+				2F4781DA185941B8002DAF85 /* Controller.m in Sources */,
+				2F4781DD18594238002DAF85 /* DMPullStockData.m in Sources */,
 				8459776F1833F6F500E7F95E /* PageLoad.m in Sources */,
+				2F4781D718594158002DAF85 /* Model.xcdatamodel in Sources */,
 				2F378A1E18450B82004BFFF8 /* AFPropertyListRequestOperation.m in Sources */,
 				2F378A1B18450B82004BFFF8 /* AFImageRequestOperation.m in Sources */,
 				845977731833F6F500E7F95E /* Functions.m in Sources */,
@@ -442,9 +442,9 @@
 				845977721833F6F500E7F95E /* Browser.m in Sources */,
 				8459771D1833D92E00E7F95E /* DMDocument.xcdatamodeld in Sources */,
 				845977761833FB7F00E7F95E /* JSWrappers.m in Sources */,
+				2F4781D518594082002DAF85 /* startup.js in Sources */,
 				8459777C1833FB8D00E7F95E /* NSStringExtras.m in Sources */,
 				845977701833F6F500E7F95E /* Startup.m in Sources */,
-				8459777F1833FDD200E7F95E /* Controller.m in Sources */,
 				2F378A1A18450B82004BFFF8 /* AFHTTPRequestOperation.m in Sources */,
 				2F378A1918450B82004BFFF8 /* AFHTTPClient.m in Sources */,
 			);
@@ -679,16 +679,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2F378A011845051E004BFFF8 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2F378A021845051E004BFFF8 /* Model.xcdatamodel */,
-			);
-			currentVersion = 2F378A021845051E004BFFF8 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		8459771B1833D92E00E7F95E /* DMDocument.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
